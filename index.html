@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <button id="theme-toggle" aria-label="Toggle light/dark theme">Toggle Theme</button>
+  </header>
+
+  <main>
+    <!-- Greeting Widget -->
+    <section aria-labelledby="greeting">
+      <p id="clock"></p>
+      <p id="date"></p>
+      <h1 id="greeting"></h1>
+      <div>
+        <input id="name-input" type="text" placeholder="Enter your name" aria-label="Your name" />
+        <button id="name-save">Save Name</button>
+      </div>
+    </section>
+
+    <!-- Focus Timer Widget -->
+    <section aria-label="Focus Timer">
+      <p id="timer-display">25:00</p>
+      <button id="timer-start">Start</button>
+      <button id="timer-stop">Stop</button>
+      <button id="timer-reset">Reset</button>
+    </section>
+
+    <!-- To-Do List Widget -->
+    <section aria-label="To-Do List">
+      <div>
+        <input id="todo-input" type="text" placeholder="New task" aria-label="New task" />
+        <button id="todo-add">Add</button>
+      </div>
+      <p id="todo-duplicate-warning" role="alert" aria-live="polite"></p>
+      <ul id="todo-list"></ul>
+    </section>
+
+    <!-- Quick Links Widget -->
+    <section aria-label="Quick Links">
+      <div>
+        <input id="link-label-input" type="text" placeholder="Label" aria-label="Link label" />
+        <input id="link-url-input" type="url" placeholder="URL" aria-label="Link URL" />
+        <button id="link-add">Add Link</button>
+      </div>
+      <p id="link-validation-msg" role="alert" aria-live="polite"></p>
+      <div id="links-container"></div>
+    </section>
+  </main>
+
+  <script defer src="js/app.js"></script>
+</body>
+</html>

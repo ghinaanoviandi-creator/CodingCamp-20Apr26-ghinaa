@@ -6,7 +6,7 @@ Implement a single-page personal dashboard using vanilla HTML, CSS, and JavaScri
 
 ## Tasks
 
-- [ ] 1. Scaffold project structure and base HTML
+- [x] 1. Scaffold project structure and base HTML
   - Create `index.html` with semantic markup for all four widget sections: Greeting, Focus Timer, To-Do List, Quick Links
   - Add `<link>` to `css/style.css` and `<script defer>` to `js/app.js`
   - Include all required DOM element IDs: `#clock`, `#date`, `#greeting`, `#name-input`, `#name-save`, `#timer-display`, `#timer-start`, `#timer-stop`, `#timer-reset`, `#todo-input`, `#todo-add`, `#todo-list`, `#todo-duplicate-warning`, `#link-label-input`, `#link-url-input`, `#link-add`, `#links-container`, `#link-validation-msg`, `#theme-toggle`
