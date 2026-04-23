@@ -142,8 +142,8 @@ Implement a single-page personal dashboard using vanilla HTML, CSS, and JavaScri
 - [x] 8. Checkpoint — Timer and To-Do List working
   - Ensure all tests pass, ask the user if questions arise.
 
-- [-] 9. Implement Quick Links
-  - [-] 9.1 Write `normalizeUrl(url)` pure function and data-layer functions
+- [x] 9. Implement Quick Links
+  - [x] 9.1 Write `normalizeUrl(url)` pure function and data-layer functions
     - `normalizeUrl`: prepends `"https://"` if URL does not start with `"http://"` or `"https://"`, otherwise returns unchanged
     - Write `persistLinks()`: `JSON.stringify(links)` → `localStorage` key `"links"`
     - Write `loadLinks()`: `JSON.parse` from `localStorage` key `"links"`, returns array (default `[]`)
@@ -157,7 +157,7 @@ Implement a single-page personal dashboard using vanilla HTML, CSS, and JavaScri
     - **Property 15: Link list serialization round-trip**
     - **Validates: Requirements 4.4**
 
-  - [ ] 9.4 Implement `addLink(label, url)`, `deleteLink(id)`, `renderLinks()` and wire up DOM
+  - [x] 9.4 Implement `addLink(label, url)`, `deleteLink(id)`, `renderLinks()` and wire up DOM
     - `addLink`: trims label and url, rejects if either is empty (shows `#link-validation-msg`), calls `normalizeUrl`, pushes `{id, label, url}`, persists, renders
     - `deleteLink`: filters `links[]` by id, persists, renders
     - `renderLinks`: rebuilds `#links-container` from `links[]`; each link is a button opening URL in new tab, plus a delete control
@@ -170,12 +170,12 @@ Implement a single-page personal dashboard using vanilla HTML, CSS, and JavaScri
     - **Property 16: Invalid link submissions are rejected**
     - **Validates: Requirements 4.5**
 
-- [ ] 10. Wrap `app.js` in IIFE and add `localStorage` error handling
+- [x] 10. Wrap `app.js` in IIFE and add `localStorage` error handling
   - Wrap all code in an IIFE `(function() { ... })()` so no globals are leaked
   - Wrap all `localStorage` reads and writes in try/catch; on failure emit a one-time `console.warn` and continue in-memory
   - _Requirements: 6.2, 6.3_
 
-- [ ] 11. Final checkpoint — Full integration
+- [x] 11. Final checkpoint — Full integration
   - Ensure all tests pass, ask the user if questions arise.
 
 ## Notes
