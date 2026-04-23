@@ -20,8 +20,8 @@ Implement a single-page personal dashboard using vanilla HTML, CSS, and JavaScri
     - Add base layout styles: body, widget cards, inputs, buttons using the custom properties
     - _Requirements: 5.1, 5.4, 6.2_
 
-- [ ] 3. Implement theme toggle
-  - [ ] 3.1 Write `applyTheme(theme)` and `loadTheme()` functions in `js/app.js`
+- [x] 3. Implement theme toggle
+  - [x] 3.1 Write `applyTheme(theme)` and `loadTheme()` functions in `js/app.js`
     - `applyTheme` sets `data-theme` attribute on `<body>` and writes to `localStorage` key `"theme"`
     - `loadTheme` reads `localStorage` key `"theme"`, defaults to `"light"`
     - Wire `#theme-toggle` click handler to flip between `"light"` and `"dark"` and call `applyTheme`
