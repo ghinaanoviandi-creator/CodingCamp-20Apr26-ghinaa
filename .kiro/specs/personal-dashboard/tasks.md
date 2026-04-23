@@ -66,11 +66,11 @@ Implement a single-page personal dashboard using vanilla HTML, CSS, and JavaScri
     - **Property 5: User name persistence round-trip**
     - **Validates: Requirements 1.9**
 
-- [ ] 5. Checkpoint — Greeting and theme working
+- [x] 5. Checkpoint — Greeting and theme working
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 6. Implement Focus Timer
-  - [ ] 6.1 Write `formatTimerDisplay(seconds)` pure function
+- [x] 6. Implement Focus Timer
+  - [x] 6.1 Write `formatTimerDisplay(seconds)` pure function
     - Returns zero-padded `"MM:SS"` string for any integer seconds in [0, 1500]
     - _Requirements: 2.3_
 
@@ -78,7 +78,7 @@ Implement a single-page personal dashboard using vanilla HTML, CSS, and JavaScri
     - **Property 6: Timer display formatting produces valid MM:SS strings**
     - **Validates: Requirements 2.3**
 
-  - [ ] 6.3 Implement timer state and control functions
+  - [x] 6.3 Implement timer state and control functions
     - Declare module-level variables: `remaining = 1500`, `running = false`, `intervalId = null`
     - Write `startTimer()`: sets `running = true`, disables `#timer-start`, starts `setInterval(tickTimer, 1000)`
     - Write `stopTimer()`: clears interval, sets `running = false`, re-enables `#timer-start`

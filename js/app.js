@@ -123,4 +123,69 @@ document.addEventListener('DOMContentLoaded', function () {
   updateClock();
   setInterval(updateClock, 60000);
 
+  // ============================================================
+  // Focus Timer
+  // ============================================================
+
+  // Pure helper — converts total seconds to zero-padded "MM:SS"
+  function formatTimerDisplay(seconds) {
+    var mm = String(Math.floor(seconds / 60)).padStart(2, '0');
+    var ss = String(seconds % 60).padStart(2, '0');
+    return mm + ':' + ss;
+  }
+
+  // Timer state
+  var remaining = 1500;
+  var running = false;
+  var intervalId = null;
+
+  function startTimer() {
+    if (running) return;
+    running = true;
+    var startBtn = document.getElementById('timer-start');
+    if (startBtn) startBtn.disabled = true;
+    intervalId = setInterval(tickTimer, 1000);
+  }
+
+  function stopTimer() {
+    clearInterval(intervalId);
+    intervalId = null;
+    running = false;
+    var startBtn = document.getElementById('timer-start');
+    if (startBtn) startBtn.disabled = false;
+  }
+
+  function resetTimer() {
+    stopTimer();
+    remaining = 1500;
+    var display = document.getElementById('timer-display');
+    if (display) display.textContent = formatTimerDisplay(remaining);
+  }
+
+  function tickTimer() {
+    if (remaining === 0) return; // defensive guard
+    remaining -= 1;
+    var display = document.getElementById('timer-display');
+    if (display) display.textContent = formatTimerDisplay(remaining);
+    if (remaining === 0) onTimerComplete();
+  }
+
+  function onTimerComplete() {
+    stopTimer();
+    alert('Focus session complete!');
+  }
+
+  // Wire up timer buttons
+  var timerStartBtn = document.getElementById('timer-start');
+  var timerStopBtn = document.getElementById('timer-stop');
+  var timerResetBtn = document.getElementById('timer-reset');
+
+  if (timerStartBtn) timerStartBtn.addEventListener('click', startTimer);
+  if (timerStopBtn) timerStopBtn.addEventListener('click', stopTimer);
+  if (timerResetBtn) timerResetBtn.addEventListener('click', resetTimer);
+
+  // Initialize display to "25:00"
+  var timerDisplay = document.getElementById('timer-display');
+  if (timerDisplay) timerDisplay.textContent = formatTimerDisplay(remaining);
+
 });
