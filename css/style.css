@@ -1,1 +1,364 @@
-/* Personal Dashboard styles — placeholder */
+/* ============================================================
+   CSS Custom Properties — Light Theme (default)
+   ============================================================ */
+:root {
+  --bg: #f0f8ff;
+  --surface: #ffffff;
+  --text: #2c3e50;
+  --accent: #ab898f;
+  --border: #d4e6f1;
+
+  --radius: 12px;
+  --shadow: 0 2px 12px rgba(137, 207, 240, 0.15);
+  --transition: 0.2s ease;
+  --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ============================================================
+   Dark Theme Override
+   ============================================================ */
+[data-theme="dark"] {
+  --bg: #0d1b2a;
+  --surface: #1b263b;
+  --text: #f0f8ff;
+  --accent: #ab898f;
+  --border: #415a77;
+
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================================
+   Reset & Base
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background-color var(--transition), color var(--transition);
+  line-height: 1.5;
+}
+
+/* ============================================================
+   Header
+   ============================================================ */
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--surface);
+}
+
+/* ============================================================
+   Main Layout — responsive grid
+   ============================================================ */
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  padding: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   Widget Cards (each <section> is a card)
+   ============================================================ */
+main > section {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+/* ============================================================
+   Greeting Widget
+   ============================================================ */
+#clock {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1;
+}
+
+#date {
+  font-size: 0.9rem;
+  color: var(--text);
+  opacity: 0.65;
+}
+
+#greeting {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 0.25rem;
+}
+
+/* Name input row */
+main > section > div {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   Focus Timer Widget
+   ============================================================ */
+#timer-display {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+/* Timer button row — reuse the flex div pattern */
+
+/* ============================================================
+   To-Do List Widget
+   ============================================================ */
+#todo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-height: 260px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+#todo-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+#todo-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#todo-list::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+#todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+  transition: background-color var(--transition);
+}
+
+#todo-list li:hover {
+  background-color: var(--surface);
+}
+
+#todo-list li.completed span {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+#todo-list li span {
+  flex: 1;
+  word-break: break-word;
+}
+
+#todo-duplicate-warning {
+  font-size: 0.8rem;
+  color: #e53e3e;
+  min-height: 1.1em;
+}
+
+[data-theme="dark"] #todo-duplicate-warning {
+  color: #fc8181;
+}
+
+/* ============================================================
+   Quick Links Widget
+   ============================================================ */
+#links-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#link-validation-msg {
+  font-size: 0.8rem;
+  color: #e53e3e;
+  min-height: 1.1em;
+}
+
+[data-theme="dark"] #link-validation-msg {
+  color: #fc8181;
+}
+
+/* Link buttons rendered by JS */
+#links-container .link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  background-color: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: var(--font);
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+
+#links-container .link-btn:hover {
+  opacity: 0.85;
+}
+
+#links-container .link-delete {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  opacity: 0.45;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0 0.2rem;
+  line-height: 1;
+  transition: opacity var(--transition);
+}
+
+#links-container .link-delete:hover {
+  opacity: 0.9;
+}
+
+/* ============================================================
+   Inputs
+   ============================================================ */
+input[type="text"],
+input[type="url"] {
+  flex: 1;
+  min-width: 0;
+  padding: 0.45rem 0.75rem;
+  background-color: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: var(--font);
+  outline: none;
+  transition: border-color var(--transition), background-color var(--transition);
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus {
+  border-color: var(--accent);
+}
+
+input[type="text"]::placeholder,
+input[type="url"]::placeholder {
+  color: var(--text);
+  opacity: 0.4;
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+button {
+  padding: 0.45rem 1rem;
+  background-color: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: var(--font);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity var(--transition), background-color var(--transition);
+}
+
+button:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Secondary / outline style for timer stop/reset and task actions */
+button.secondary {
+  background-color: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+button.secondary:hover:not(:disabled) {
+  background-color: var(--border);
+  opacity: 1;
+}
+
+/* Small icon-style buttons used in todo list items */
+button.icon-btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  background-color: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  opacity: 0.6;
+}
+
+button.icon-btn:hover:not(:disabled) {
+  opacity: 1;
+  background-color: var(--border);
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  background-color: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+#theme-toggle:hover {
+  background-color: var(--border);
+  opacity: 1;
+}
+
+/* ============================================================
+   Responsive — single column on small screens
+   ============================================================ */
+@media (max-width: 480px) {
+  main {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  #clock {
+    font-size: 2rem;
+  }
+
+  #timer-display {
+    font-size: 2.25rem;
+  }
+}

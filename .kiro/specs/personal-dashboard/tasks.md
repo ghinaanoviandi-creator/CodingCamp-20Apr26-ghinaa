@@ -13,8 +13,8 @@ Implement a single-page personal dashboard using vanilla HTML, CSS, and JavaScri
   - Create empty `css/style.css` and `js/app.js` placeholder files
   - _Requirements: 6.1, 6.2, 6.3_
 
-- [ ] 2. Implement CSS theming and base styles
-  - [ ] 2.1 Define CSS custom properties for light and dark themes
+- [x] 2. Implement CSS theming and base styles
+  - [x] 2.1 Define CSS custom properties for light and dark themes
     - Write `:root` block with `--bg`, `--surface`, `--text`, `--accent`, `--border` variables for light theme
     - Write `[data-theme="dark"]` override block with dark-mode values
     - Add base layout styles: body, widget cards, inputs, buttons using the custom properties
