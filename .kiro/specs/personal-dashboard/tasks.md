@@ -88,8 +88,8 @@ Implement a single-page personal dashboard using vanilla HTML, CSS, and JavaScri
     - Wire `#timer-start`, `#timer-stop`, `#timer-reset` click handlers; initialize display to `"25:00"` on load
     - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7_
 
-- [ ] 7. Implement To-Do List
-  - [ ] 7.1 Write `isDuplicate(text)` pure function and data-layer functions
+- [x] 7. Implement To-Do List
+  - [x] 7.1 Write `isDuplicate(text)` pure function and data-layer functions
     - `isDuplicate(text)` checks in-memory `tasks[]` for a case-insensitive match on incomplete tasks
     - Write `persistTasks()`: `JSON.stringify(tasks)` → `localStorage` key `"tasks"`
     - Write `loadTasks()`: `JSON.parse` from `localStorage` key `"tasks"`, returns array (default `[]`)
@@ -103,7 +103,7 @@ Implement a single-page personal dashboard using vanilla HTML, CSS, and JavaScri
     - **Property 12: Task list serialization round-trip**
     - **Validates: Requirements 3.7**
 
-  - [ ] 7.4 Implement `addTask(text)`, `deleteTask(id)`, `toggleTask(id)`, `editTask(id, newText)`
+  - [x] 7.4 Implement `addTask(text)`, `deleteTask(id)`, `toggleTask(id)`, `editTask(id, newText)`
     - `addTask`: trims text, rejects empty/whitespace (req 3.8) and duplicates (req 3.2), pushes `{id, text, completed: false}`, persists, renders
     - `deleteTask`: filters `tasks[]` by id, persists, renders
     - `toggleTask`: flips `completed` on matching task, persists, renders
@@ -131,7 +131,7 @@ Implement a single-page personal dashboard using vanilla HTML, CSS, and JavaScri
     - **Property 11: Task deletion removes task and persists**
     - **Validates: Requirements 3.6**
 
-  - [ ] 7.10 Implement `renderTasks()` and wire up DOM interactions
+  - [x] 7.10 Implement `renderTasks()` and wire up DOM interactions
     - `renderTasks` rebuilds `#todo-list` `<ul>` from `tasks[]`; each item has complete, edit, and delete controls
     - Wire `#todo-add` click and Enter keypress on `#todo-input` to `addTask`
     - Use event delegation on `#todo-list` for complete/edit/delete actions
@@ -139,11 +139,11 @@ Implement a single-page personal dashboard using vanilla HTML, CSS, and JavaScri
     - Call `loadTasks()` then `renderTasks()` on `DOMContentLoaded`
     - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8_
 
-- [ ] 8. Checkpoint — Timer and To-Do List working
+- [x] 8. Checkpoint — Timer and To-Do List working
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 9. Implement Quick Links
-  - [ ] 9.1 Write `normalizeUrl(url)` pure function and data-layer functions
+- [-] 9. Implement Quick Links
+  - [-] 9.1 Write `normalizeUrl(url)` pure function and data-layer functions
     - `normalizeUrl`: prepends `"https://"` if URL does not start with `"http://"` or `"https://"`, otherwise returns unchanged
     - Write `persistLinks()`: `JSON.stringify(links)` → `localStorage` key `"links"`
     - Write `loadLinks()`: `JSON.parse` from `localStorage` key `"links"`, returns array (default `[]`)
