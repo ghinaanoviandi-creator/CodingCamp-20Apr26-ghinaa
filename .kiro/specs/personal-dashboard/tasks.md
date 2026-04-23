@@ -32,8 +32,8 @@ Implement a single-page personal dashboard using vanilla HTML, CSS, and JavaScri
     - **Property 17: Theme persistence round-trip**
     - **Validates: Requirements 5.2, 5.3**
 
-- [ ] 4. Implement Greeting Widget and User Name
-  - [ ] 4.1 Write pure helper functions: `formatTime(date)`, `formatDate(date)`, `getGreetingPhrase(hour)`
+- [x] 4. Implement Greeting Widget and User Name
+  - [x] 4.1 Write pure helper functions: `formatTime(date)`, `formatDate(date)`, `getGreetingPhrase(hour)`
     - `formatTime` returns zero-padded `"HH:MM"` string
     - `formatDate` returns full human-readable date string (e.g., `"Monday, April 26, 2025"`)
     - `getGreetingPhrase` maps hour [0–23] to the correct greeting phrase per requirements 1.3–1.6
@@ -51,7 +51,7 @@ Implement a single-page personal dashboard using vanilla HTML, CSS, and JavaScri
     - **Property 3: Greeting phrase covers all 24 hours correctly**
     - **Validates: Requirements 1.3, 1.4, 1.5, 1.6**
 
-  - [ ] 4.5 Write `updateClock()`, `saveName(name)`, `loadName()` and wire them up
+  - [x] 4.5 Write `updateClock()`, `saveName(name)`, `loadName()` and wire them up
     - `updateClock` reads current `Date`, updates `#clock`, `#date`, `#greeting` (appending name when present)
     - `saveName` trims input, writes to `localStorage` key `"userName"`, calls `updateClock()`
     - `loadName` reads `localStorage` key `"userName"`, returns string or `""`
